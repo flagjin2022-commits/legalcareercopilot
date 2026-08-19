@@ -2,7 +2,7 @@ import { NextResponse, type NextRequest } from "next/server";
 
 import { ADMIN_ACCESS_COOKIE, BETA_ACCESS_COOKIE, isAdminAccessConfigured, isBetaAccessConfigured, verifyAccessToken } from "@/lib/server/accessControl";
 
-export async function proxy(request: NextRequest) {
+export async function middleware(request: NextRequest) {
   const path = request.nextUrl.pathname;
   const isInternal = path.startsWith("/internal/") || path.startsWith("/api/internal/");
   const isInternalLogin = path === "/internal/beta-feedback/login" || path === "/api/internal/login";

@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 42 38% 96%;
+    --foreground: 24 10% 20%;
+    --border: 350 15% 84%;
+    --primary: 348 54% 24%;
+    --primary-foreground: 42 38% 96%;
+    --muted: 36 18% 91%;
+    --muted-foreground: 24 8% 41%;
+    --accent: 40 35% 51%;
+    --card: 40 35% 99%;
+    --secondary: 38 25% 92%;
+    --radius: 1rem;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    background-image: radial-gradient(hsl(var(--primary) / 0.035) 0.6px, transparent 0.6px);
+    background-size: 7px 7px;
+    font-family: Inter, "PingFang SC", "Microsoft YaHei", sans-serif;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: Georgia, "Noto Serif SC", "Songti SC", serif;
+  }
+}
